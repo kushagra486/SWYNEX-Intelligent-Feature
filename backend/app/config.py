@@ -18,7 +18,7 @@ EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "nomic-embed-text")
 EMBEDDING_DIMS = 768
 
 # Cloud model used when a task is escalated or local is unavailable/busy.
-GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL", "postgresql://nexus:nexus_dev_password@localhost:5432/nexus"
