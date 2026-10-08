@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bharat AI Nexus</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #e0f7fa;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .feature-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 1rem;
+      padding: 1.5rem;
+      width: 300px;
+      text-align: center;
+    }
+    .feature-card h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1.5rem;
+    }
+    .feature-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1e3a8a;
+      color: white;
+      margin-top: 2rem;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bharat AI Nexus</h1>
+    <p>One Intelligence. Every Device. Infinite Possibilities.</p>
+  </header>
+  <section class="hero">
+    <h2>Empowering the Future of AI</h2>
+    <p>Discover the power of Bharat AI Nexus, where intelligence meets every device, unlocking endless possibilities for innovation and progress.</p>
+  </section>
+  <section class="features">
+    <div class="feature-card">
+      <h3>Local-First</h3>
+      <p>Process data locally for enhanced privacy and performance, ensuring your information stays secure and your devices work smarter.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Multi-Device</h3>
+      <p>Seamlessly sync and access your AI capabilities across all your devices, making intelligence available wherever you are.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Zero Cost</h3>
+      <p>Experience AI without the cost—powerful tools and intelligence made accessible to everyone, without compromise.</p>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Bharat AI Nexus. All rights reserved.</p>
+  </footer>
+  <script>
+    // Optional: Add interactivity if needed
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.feature-card');
+      cards.forEach(card => {
+        card.addEventListener('mouseover', () => {
+          card.style.transform = 'scale(1.05)';
+          card.style.transition = 'transform 0.2s ease';
+        });
+        card.addEventListener('mouseout', () => {
+          card.style.transform = 'scale(1)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
