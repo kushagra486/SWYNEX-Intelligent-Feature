@@ -9,7 +9,7 @@ GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 # Local model tiers, mapped to what's already pulled via `ollama list`.
 LOCAL_MODELS = {
-    "fast": "qwen3:4b",
+    "fast": "qwen3:8b",
     "general": "qwen3:8b",
     "coding": "qwen3:8b",
 }

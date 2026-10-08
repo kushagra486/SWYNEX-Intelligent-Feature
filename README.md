@@ -16,7 +16,7 @@ Local-first, model-agnostic Personal AI Operating System. See `Bharat_AI_Nexus_P
 
 ## Running it
 
-1. Copy `.env.example` to `.env` and adjust if needed (add `GROQ_API_KEY` / `TAVILY_API_KEY` to activate cloud fallback and live search — both optional, everything else works without them). Groq model defaults to `openai/gpt-oss-120b`; override with `GROQ_MODEL` if Groq retires it. Local models expected: `qwen3:8b`, `qwen3:4b`, and `nomic-embed-text` (embeddings for memory).
+1. Copy `.env.example` to `.env` and adjust if needed (add `GROQ_API_KEY` / `TAVILY_API_KEY` to activate cloud fallback and live search — both optional, everything else works without them). Groq model defaults to `openai/gpt-oss-120b`; override with `GROQ_MODEL` if Groq retires it. Local models expected: `qwen3:8b` (all local tiers) and `nomic-embed-text` (embeddings for memory).
 2. Start the data layer:
    ```
    docker compose up -d
