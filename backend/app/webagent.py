@@ -20,6 +20,7 @@ import subprocess
 import sys
 import uuid
 
+from .htmllint import lint_html
 from .router import route_chat
 
 CODE_FENCE_RE = re.compile(r"```(?:html)?\s*\n(.*?)```", re.DOTALL)
@@ -37,14 +38,14 @@ Output ONLY a single html code block with the full page - no explanation before 
 
 Task: {task}"""
 
-FIX_PROMPT = """The following HTML page was tested in a headless browser and produced errors.
+FIX_PROMPT = """The following HTML page was tested in a headless browser and produced errors or invalid markup.
 
 Page:
 ```html
 {html}
 ```
 
-Console/JS errors:
+Errors (HTML lint and browser console/JS):
 {errors}
 
 Fix the page so it loads without errors. Keep it self-contained (inline CSS/JS only, no network resources).
@@ -88,7 +89,8 @@ async def generate_and_verify_page(task: str, max_retries: int = MAX_RETRIES) ->
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(html)
 
-        errors = await asyncio.to_thread(_check_page_sync, os.path.abspath(html_path), screenshot_path)
+        browser_errors = await asyncio.to_thread(_check_page_sync, os.path.abspath(html_path), screenshot_path)
+        errors = lint_html(html) + browser_errors
         attempts.append({"attempt": attempt_num + 1, "errors": errors, "ok": len(errors) == 0})
 
         if not errors:
